@@ -1,0 +1,12 @@
+<div>
+    <h2 class="mt-4" style="font-family: Arial, Helvetica, sans-serif">{{ post.title | uppercase}}
+    </h2>
+    <p>{{ post.desc }}</p>
+    <img class="img-responsive" src="{{ post.imagePath }}" />
+    <p class="mt-2">Added By: {{ post.author }}</p>
+    <p>Post Date: {{ post.postDate }}</p>
+    <button class="btn btn-success btn-sm" (click)="onEdit()">Edit</button>
+    |
+    <button class="btn btn-danger btn-sm" (click)="onDelete()">Delete</button>
+    <hr>
+</div>

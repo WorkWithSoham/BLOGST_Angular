@@ -1,0 +1,36 @@
+<div>
+    <div class="col-xs-6 col-sm-12 col-lg-12 col-xl-12">
+        <h1 *ngIf="!editMode">Post Add</h1>
+        <h1 *ngIf="editMode">Post Edit</h1>
+        <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <div>
+                    <label for="title" class="h4">Title</label>
+                    <input formControlName="title" class="form-control" type="text" placeholder="Post Title">
+                </div>
+                <br />
+                <div>
+                    <label for="desc" class="h4">Description</label>
+                    <textarea formControlName="desc" class="form-control" id="exampleFormControlTextarea1" rows="5">
+                </textarea>
+                </div>
+                <br />
+                <div>
+                    <label for="imagePath" class="h4">Image</label>
+                    <input formControlName="imagePath" class="form-control" type="text" placeholder="Image Link">
+                    <br>
+                    <img class="img-responsive" src="{{ postForm.value.imagePath }}">
+                    <br />
+                    <p *ngIf="!postForm.valid">Few fields are missing!</p>
+                    <div>
+                        <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Save
+                        </button>
+                        |
+                        <button type="button" (click)="onCancel()" class="btn btn-info">Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
