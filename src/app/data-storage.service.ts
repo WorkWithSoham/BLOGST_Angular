@@ -11,11 +11,11 @@ export class DataStorageService {
 
     storePost() {
         const posts: Post[] = this.postService.getPosts()
-        this.http.put('https://live-posts-15f79.firebaseio.com/posts.json', posts).subscribe((res) => console.log(res))
+        this.http.put('[ Add your firebase data storeage link ]/posts.json', posts).subscribe((res) => console.log(res))
     };
 
     fetchPost() {
-        this.http.get('https://live-posts-15f79.firebaseio.com/posts.json').pipe(
+        this.http.get('[ Add your firebase data storeage link ]/posts.json').pipe(
             tap((posts: Post[]) => {
                 console.log(posts)
                 this.postService.setPost(posts);
